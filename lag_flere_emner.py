@@ -10,5 +10,10 @@ def lag_nytt_emne():
     sesong.append(tid.capitalize())
     studiepoeng.append(poeng)
 
-lag_nytt_emne()
-print(f"Nytt emne: {emnekode[-1]}, {sesong[-1]}, {studiepoeng[-1]} poeng")
+while True:
+    lag_nytt_emne()
+    flere_emner=input("Vil du lage flere emner? (Ja/nei)").lower()
+    if flere_emner!="ja":
+        break
+for i in range(len(sesong)):
+    print(f"Nytt emne: {emnekode[i]}, {sesong[i]}, {studiepoeng[i]} poeng")
